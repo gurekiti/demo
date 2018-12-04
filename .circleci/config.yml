@@ -6,6 +6,11 @@ jobs:
     steps:
       - checkout
       - run: sh gradlew build
+  approve:
+    steps: |
+      curl -X POST -H 'Content-type: application/json' \
+        --data "{\"text\": \"Please approve workflow from <https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}|here>.\"}" \
+        $SLACK_WEBHOOK_URL
   jibBuildTar:
     docker:
       - image: circleci/openjdk:11-jdk-node-browsers-legacy
@@ -18,6 +23,10 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - jibBuildTar:
+      - approve:
           requires:
             - build
+      - jibBuildTar:
+          requires:
+            - approve
+
