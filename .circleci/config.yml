@@ -5,7 +5,7 @@ jobs:
       - image: circleci/openjdk:11-jdk-node-browsers-legacy
     steps:
       - checkout
-      - run:'gradle build'
+      - run:'sh gradlew build'
 workflows:
   version: 2
   build_and_test:
