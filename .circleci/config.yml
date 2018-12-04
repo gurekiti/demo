@@ -6,7 +6,6 @@ jobs:
     steps:
       - checkout
       - run: sh gradlew build
-  approve:
   jibBuildTar:
     docker:
       - image: circleci/openjdk:11-jdk-node-browsers-legacy
