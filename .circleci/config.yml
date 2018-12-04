@@ -11,6 +11,13 @@ jobs:
     docker:
       - image: circleci/openjdk:11-jdk-node-browsers-legacy
     steps:
+      - run:
+          name: send notification to slack
+          command: |
+            curl -X POST -H 'Content-type: application/json' \
+              --data "{\"text\": \"Please approve workflow from <https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}|here>.\"}" \
+              $SLACK_WEBHOOK_URL
+
       - checkout
       - run: sh gradlew jibBuildTar
 
@@ -18,12 +25,6 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - run:
-        name: send notification to slack
-        command: |
-          curl -X POST -H 'Content-type: application/json' \
-            --data "{\"text\": \"Please approve workflow from <https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}|here>.\"}" \
-            $SLACK_WEBHOOK_URL
       - build
       - jibBuildTar:
           requires:
