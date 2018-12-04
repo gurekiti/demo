@@ -10,6 +10,11 @@ jobs:
       - image: circleci/openjdk:11-jdk-node-browsers-legacy
     steps:
       - checkout
+  jibBuildTar:
+    docker:
+      - image: circleci/openjdk:11-jdk-node-browsers-legacy
+    steps:
+      - checkout
 
 workflows:
   version: 2
@@ -17,3 +22,4 @@ workflows:
     jobs:
       - build
       - test
+      - jibBuildTar
