@@ -19,5 +19,5 @@ workflows:
     jobs:
       - build
       - jibBuildTar:
-        requires:
-          - build
+          requires:
+            - build
