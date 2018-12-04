@@ -8,6 +8,6 @@ public class CircleTest {
     @Test
     @DisplayName("boolean")
     void test(){
-        //fail("circle error");
+        fail("circle error");
     }
 }
