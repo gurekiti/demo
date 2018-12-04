@@ -6,16 +6,11 @@ jobs:
     steps:
       - checkout
       - run: sh gradlew build
-  test:
-    docker:
-      - image: circleci/openjdk:11-jdk-node-browsers-legacy
-    steps:
-      - checkout
-      - run: sh gradlew test
   jibBuildTar:
     docker:
       - image: circleci/openjdk:11-jdk-node-browsers-legacy
     steps:
+      - run: sh gradlew buildEnvironment
       - run: sh gradlew jibBuildTar
 
 workflows:
@@ -24,4 +19,3 @@ workflows:
     jobs:
       - build
       - test
-      - jibBuildTar
