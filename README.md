@@ -1,4 +1,4 @@
-＃ Java学習用リポジトリ
+Java学習用リポジトリ
 
 * CircleCIにて、build,test,jib実行
 
