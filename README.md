@@ -1,5 +1,18 @@
 Java学習用リポジトリ
 
-* CircleCIにて、build,test,jib実行
+* 組み込んで見たもの
 
-* jibにてdockerイメージの作成
+** circleCI連携
+
+** junit5
+
+** jib
+*** gradleの設定
+
+** docker-compose
+
+** spring actuator
+
+** webjars
+
+

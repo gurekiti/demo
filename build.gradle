@@ -48,6 +48,7 @@ jib {
 		format = 'OCI'
 	}
 }
+
 test {
 	useJUnitPlatform {
 		includeEngines 'junit-jupiter'
@@ -55,13 +56,29 @@ test {
 }
 
 dependencies {
-	compile group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.11.RELEASE'
-	implementation('org.springframework.boot:spring-boot-starter-security')
-	implementation('org.springframework.boot:spring-boot-starter-web')
-	implementation('org.springframework.session:spring-session-core')
+	// app
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	//compile 'org.springframework.boot:spring-boot-starter-security'
+	//compile 'org.springframework.session:spring-session-core'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.projectlombok:lombok:1.16.20'
+
+	// webjars
+	compile 'org.webjars:jquery:3.3.1'
+	compile 'org.webjars:bootstrap:4.2.1'
+	compile 'org.webjars:jquery-ui:1.12.1'
+
+	// 開発
 	runtimeOnly('org.springframework.boot:spring-boot-devtools')
+
+	// テスト
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	testImplementation('org.springframework.security:spring-security-test')
+	//testImplementation('org.springframework.security:spring-security-test')
 	testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.1.0'
 	testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.1.0'
+	//compile group: 'org.flywaydb', name: 'flyway-core', version: '5.0.7'
+	//compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+	//testCompile group: 'org.dbunit', name: 'dbunit', version: '2.6.0'
+
+	compile('org.springframework.boot:spring-boot-starter-actuator')
 }
