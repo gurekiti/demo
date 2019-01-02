@@ -1,18 +1,18 @@
-Java学習用リポジトリ
+#Java学習用リポジトリ
 
-* 組み込んで見たもの
+# 組み込んで見たもの
 
-** circleCI連携
+## circleCI連携
 
-** junit5
+## junit5
 
-** jib
-*** gradleの設定
+## jib
+gradleの設定
 
-** docker-compose
+## docker-compose
 
-** spring actuator
+## spring actuator
 
-** webjars
+## webjars
 
 
