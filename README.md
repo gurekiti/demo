@@ -10,12 +10,9 @@ Java学習用リポジトリ
 *** gradleの設定
 
 ** docker-compose
-*** ファイルを起動するだけ。必要なのは中身
 
 ** spring actuator
-*** gradleに定義を設定し、bootを起動するだけ
 
 ** webjars
-*** gradleに設定を追加、テンプレートに@{}でパスを指定してあげる
 
 
